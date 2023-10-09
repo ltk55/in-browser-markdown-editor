@@ -34,69 +34,65 @@
 
   h6 {
     @apply text-sm;
-    @apply text-primary-100;
+    @apply text-orange;
   }
 }
 
 @layer components {
-  .preview > * + * {
+  .preview-markdown > * + * {
     @apply mt-6;
   }
 
-  .preview :is(p, li) {
-    @apply text-neutral-600;
+  .preview-markdown :is(p, li) {
+    @apply text-neutral-500;
     @apply text-sm;
     @apply font-serif;
     @apply font-normal;
   }
 
-  .preview :is(p, li) {
-    @apply text-neutral-700;
-  }
-
-  .preview :is(ol, ul) {
+  .preview-markdown :is(ol, ul) {
     @apply ml-6;
   }
 
-  .preview ol li {
+  .preview-markdown ol li {
     @apply list-decimal;
   }
 
-  .preview ul li {
+  .preview-markdown ul li {
     @apply list-disc;
   }
 
-  .preview ul li::marker {
-    @apply text-primary-100;
+  .preview-markdown ul li::marker {
+    @apply text-orange;
   }
 
-  .preview code {
-    @apply text-neutral-400;
+  .preview-markdown code {
+    @apply text-neutral-700;
     @apply font-mono;
     @apply text-sm;
     @apply whitespace-pre-wrap;
   }
 
-  .preview blockquote {
-    @apply bg-neutral-900;
+  .preview-markdown blockquote {
+    @apply bg-neutral-200;
     @apply p-6;
     @apply border-l-4;
-    @apply border-primary-100;
+    @apply border-orange;
     @apply rounded-sm;
   }
 
-  .preview blockquote p {
-    @apply text-neutral-100;
+  .preview-markdown blockquote p {
+    @apply text-neutral-700;
     @apply font-bold;
   }
 
-  .preview a {
+  .preview-markdown a {
     @apply underline-offset-2;
     @apply underline;
   }
 
-  .preview pre {
-    @apply bg-neutral-900;
+  .preview-markdown pre {
+    @apply bg-neutral-200;
     @apply p-6;
   }
 }

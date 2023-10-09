@@ -9,7 +9,7 @@ function App() {
   );
 
   return (
-    <div className="flex h-full w-full">
+    <div className="flex h-screen w-screen overflow-clip">
       <MarkdownEditor markdown={markdown} setMarkdown={setMarkdown} />
       <Preview markdown={markdown} />
     </div>
