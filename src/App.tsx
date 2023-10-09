@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-import MarkdownEditor from "./components/MarkdownEditor/MarkdownEditor";
-import Preview from "./components/Preview/Preview";
+import Header from "./components/header/Header";
+import MarkdownEditor from "./components/MarkdownEditor";
+import Preview from "./components/Preview";
 
 function App() {
   const [markdown, setMarkdown] = useState(
@@ -9,10 +10,13 @@ function App() {
   );
 
   return (
-    <div className="flex h-screen w-screen overflow-clip">
-      <MarkdownEditor markdown={markdown} setMarkdown={setMarkdown} />
-      <Preview markdown={markdown} />
-    </div>
+    <>
+      <Header />
+      <div className="flex h-screen w-screen">
+        <MarkdownEditor markdown={markdown} setMarkdown={setMarkdown} />
+        <Preview markdown={markdown} />
+      </div>
+    </>
   );
 }
 

@@ -13,8 +13,9 @@ export default function MarkdownEditor({
       >
         MARKDOWN
       </div>
+
       <textarea
-        className="h-full w-full bg-neutral-100 px-4 pb-4 pt-2"
+        className="mb-4 h-full w-full bg-neutral-100 p-4 pb-20 pt-2"
         value={markdown}
         onChange={(e) => setMarkdown(e.target.value)}
       />
