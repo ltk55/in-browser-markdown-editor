@@ -18,6 +18,7 @@ export default {
       },
       orange: "rgb(228, 102, 67)",
       orangeHover: "rgb(243, 151, 101)",
+      transparent: "rgba(0, 0, 0, 0)",
     },
     fontFamily: {
       sans: ["Roboto", "sans-serif"],

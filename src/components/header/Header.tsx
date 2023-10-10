@@ -1,4 +1,5 @@
 import Logo from "../../assets/logo.svg";
+import DocumentName from "./DocumentName";
 
 export default function Header(): JSX.Element {
   return (
@@ -6,6 +7,8 @@ export default function Header(): JSX.Element {
       <div className="hidden h-full items-center border-r border-r-neutral-500 px-6 xl:flex">
         <img src={Logo} alt="logo" />
       </div>
+
+      <DocumentName />
     </header>
   );
 }
