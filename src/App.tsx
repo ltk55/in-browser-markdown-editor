@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="flex h-screen w-screen">
+      <div className="grid h-screen w-full grid-cols-2">
         <MarkdownEditor markdown={markdown} setMarkdown={setMarkdown} />
         <Preview markdown={markdown} />
       </div>
