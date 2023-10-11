@@ -36,7 +36,11 @@ export default function Preview({
         </button>
       </div>
 
-      <Markdown className="preview-markdown mt-10 overflow-y-auto p-6">
+      <Markdown
+        className={`preview-markdown mt-10 overflow-y-auto p-6 ${
+          displayPreviewOnly ? "px-[calc(100vw-70vw)]" : ""
+        }`}
+      >
         {markdown}
       </Markdown>
     </section>
