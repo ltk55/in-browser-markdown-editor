@@ -1,9 +1,14 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
+import initialData from "../data/data.json";
+import { TDocument } from "../type";
+
 interface DocumentStore {
-  documentName: string;
-  setDocumentName: (documentName: string) => void;
+  documents: TDocument[];
+  setDocuments: (documents: TDocument[]) => void;
+  currentDocumentId: string;
+  setCurrentDocumentId: (currentDocument: string) => void;
   displayPreviewOnly: boolean;
   setDisplayPreviewOnly: (displayPreviewOnly: boolean) => void;
 }
@@ -11,9 +16,13 @@ interface DocumentStore {
 const useDocumentStore = create<DocumentStore>()(
   persist(
     (set) => ({
-      documentName: "Untitled Document.md",
-      setDocumentName: (documentName: string) => {
-        set(() => ({ documentName }));
+      documents: initialData,
+      setDocuments: (documents: TDocument[]) => {
+        set(() => ({ documents }));
+      },
+      currentDocumentId: "2",
+      setCurrentDocumentId: (currentDocumentId: string) => {
+        set(() => ({ currentDocumentId }));
       },
       displayPreviewOnly: false,
       setDisplayPreviewOnly: (displayPreviewOnly: boolean) => {

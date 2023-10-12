@@ -3,15 +3,25 @@ import Markdown from "react-markdown";
 import IconHidePreview from "../assets/icon-hide-preview.svg";
 import IconShowPreview from "../assets/icon-show-preview.svg";
 import useDocumentStore from "../store/documentStore";
+import { TDocument } from "../type";
 
-export default function Preview({
-  markdown,
-}: {
-  markdown: string;
-}): JSX.Element {
-  const [displayPreviewOnly, setDisplayPreviewOnly] = useDocumentStore(
-    (state) => [state.displayPreviewOnly, state.setDisplayPreviewOnly],
-  );
+export default function Preview(): JSX.Element {
+  const [
+    displayPreviewOnly,
+    setDisplayPreviewOnly,
+    documents,
+    currentDocumentId,
+  ] = useDocumentStore((state) => [
+    state.displayPreviewOnly,
+    state.setDisplayPreviewOnly,
+    state.documents,
+    state.currentDocumentId,
+  ]);
+
+  function getContentById(id: string, documents: TDocument[]) {
+    const document = documents.find((doc) => doc.id === id);
+    return document ? document.content : null;
+  }
 
   return (
     <section className="flex h-[calc(100vh-65px)] flex-col border-l border-neutral-300 pb-4">
@@ -41,7 +51,7 @@ export default function Preview({
           displayPreviewOnly ? "px-[calc(100vw-70vw)]" : ""
         }`}
       >
-        {markdown}
+        {getContentById(currentDocumentId, documents)}
       </Markdown>
     </section>
   );

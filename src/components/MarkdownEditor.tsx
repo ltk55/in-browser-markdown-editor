@@ -1,15 +1,25 @@
 import useDocumentStore from "../store/documentStore";
 
-export default function MarkdownEditor({
-  markdown,
-  setMarkdown,
-}: {
-  markdown: string;
-  setMarkdown: (markdown: string) => void;
-}): JSX.Element {
-  const displayPreviewOnly = useDocumentStore(
-    (state) => state.displayPreviewOnly,
-  );
+export default function MarkdownEditor(): JSX.Element {
+  const [displayPreviewOnly, documents, setDocuments, currentDocumentId] =
+    useDocumentStore((state) => [
+      state.displayPreviewOnly,
+      state.documents,
+      state.setDocuments,
+      state.currentDocumentId,
+    ]);
+
+  const currentDocument = documents.find((doc) => doc.id === currentDocumentId);
+
+  const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const updatedDocuments = documents.map((doc) => {
+      if (doc.id === currentDocumentId) {
+        return { ...doc, content: e.target.value };
+      }
+      return doc;
+    });
+    setDocuments(updatedDocuments);
+  };
 
   return (
     <section
@@ -24,8 +34,8 @@ export default function MarkdownEditor({
 
       <textarea
         className="mb-4 min-h-[calc(100vh-110px)] w-full bg-neutral-100 p-4 pt-2"
-        value={markdown}
-        onChange={(e) => setMarkdown(e.target.value)}
+        value={currentDocument ? currentDocument.content : ""}
+        onChange={handleContentChange}
       />
     </section>
   );
