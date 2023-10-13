@@ -1,13 +1,20 @@
+import IconShowPreview from "../assets/icon-show-preview.svg";
 import useDocumentStore from "../store/documentStore";
 
 export default function MarkdownEditor(): JSX.Element {
-  const [displayPreviewOnly, documents, setDocuments, currentDocumentId] =
-    useDocumentStore((state) => [
-      state.displayPreviewOnly,
-      state.documents,
-      state.setDocuments,
-      state.currentDocumentId,
-    ]);
+  const [
+    displayPreviewOnly,
+    setDisplayPreviewOnly,
+    documents,
+    setDocuments,
+    currentDocumentId,
+  ] = useDocumentStore((state) => [
+    state.displayPreviewOnly,
+    state.setDisplayPreviewOnly,
+    state.documents,
+    state.setDocuments,
+    state.currentDocumentId,
+  ]);
 
   const currentDocument = documents.find((doc) => doc.id === currentDocumentId);
 
@@ -27,13 +34,22 @@ export default function MarkdownEditor(): JSX.Element {
     >
       <div
         role="heading"
-        className="my-auto flex h-10 items-center bg-neutral-200 pl-4 text-sm font-medium tracking-widest text-neutral-500"
+        className="my-auto flex h-10 items-center justify-between bg-neutral-200 px-4 pl-4"
       >
-        MARKDOWN
+        <span className="text-sm font-medium tracking-widest text-neutral-500">
+          MARKDOWN
+        </span>
+
+        <button
+          onClick={() => setDisplayPreviewOnly(!displayPreviewOnly)}
+          className="md:hidden"
+        >
+          <img src={IconShowPreview} alt="display markdown preview only" />
+        </button>
       </div>
 
       <textarea
-        className="mb-4 min-h-[calc(100vh-110px)] w-full bg-neutral-100 p-4 pt-2"
+        className="mb-4 min-h-[calc(100vh-110px)] w-full resize-none border-none bg-neutral-100 p-4 pt-2 outline-none"
         value={currentDocument ? currentDocument.content : ""}
         onChange={handleContentChange}
       />

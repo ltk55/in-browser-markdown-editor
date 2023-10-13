@@ -13,7 +13,7 @@ function App() {
       <Header />
       <div
         className={`grid h-screen w-full ${
-          displayPreviewOnly ? "grid-cols-1" : "grid-cols-2"
+          displayPreviewOnly ? "grid-cols-1" : "md:grid-cols-2"
         }`}
       >
         <MarkdownEditor />
