@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import IconDocument from "../../assets/icon-document.svg";
-import useDocumentStore from "../../store/documentStore";
+import useDocumentStore from "../../lib/documentStore";
 
 export default function DocumentName(): JSX.Element {
   const [documents, setDocuments, currentDocumentId] = useDocumentStore(

@@ -2,7 +2,7 @@ import Header from "./components/header/Header";
 import MarkdownEditor from "./components/MarkdownEditor";
 import Preview from "./components/Preview";
 import Sidebar from "./components/sidebar/Sidebar";
-import useDocumentStore from "./store/documentStore";
+import useDocumentStore from "./lib/documentStore";
 
 function App() {
   const displayPreviewOnly = useDocumentStore(

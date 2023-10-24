@@ -1,5 +1,5 @@
 import IconShowPreview from "../assets/icon-show-preview.svg";
-import useDocumentStore from "../store/documentStore";
+import useDocumentStore from "../lib/documentStore";
 
 export default function MarkdownEditor(): JSX.Element {
   const [

@@ -2,7 +2,7 @@ import Markdown from "react-markdown";
 
 import IconHidePreview from "../assets/icon-hide-preview.svg";
 import IconShowPreview from "../assets/icon-show-preview.svg";
-import useDocumentStore from "../store/documentStore";
+import useDocumentStore from "../lib/documentStore";
 import { TDocument } from "../type";
 
 export default function Preview(): JSX.Element {
