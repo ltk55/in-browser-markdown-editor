@@ -27,7 +27,7 @@ export default function Preview(): JSX.Element {
     <section className="flex h-[calc(100vh-65px)] flex-col border-l border-neutral-300 pb-4">
       <div
         role="heading"
-        className={`fixed flex h-10 items-center justify-between bg-neutral-200 px-4 py-3 ${
+        className={`fixed z-0 flex h-10 items-center justify-between bg-neutral-200 px-4 py-3 ${
           displayPreviewOnly ? "w-full" : "w-1/2"
         }`}
       >

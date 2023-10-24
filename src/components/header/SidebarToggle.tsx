@@ -13,7 +13,7 @@ export default function SidebarToggle(): JSX.Element {
 
   return (
     <button
-      className="flex w-14 items-center justify-center bg-neutral-700 hover:bg-orange md:w-[72px]"
+      className="flex h-full w-14 items-center justify-center bg-neutral-700 hover:bg-orange md:w-[72px]"
       onClick={toggleSidebar}
     >
       <img

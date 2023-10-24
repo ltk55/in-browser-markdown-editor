@@ -131,4 +131,20 @@
     @apply bg-neutral-200;
     @apply p-6;
   }
+
+  .primary-btn {
+    @apply bg-orange;
+    @apply font-sans;
+    @apply text-neutral-100;
+    @apply p-3;
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    @apply transition-colors;
+    @apply rounded-md;
+  }
+
+  .primary-btn:hover {
+    @apply bg-orangeHover;
+  }
 }

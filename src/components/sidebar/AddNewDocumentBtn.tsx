@@ -15,10 +15,7 @@ export default function AddNewDocumentBtn(): JSX.Element {
   }
 
   return (
-    <button
-      onClick={onClickHandler}
-      className="flex w-full items-center justify-center rounded-md bg-orange p-3 font-sans text-neutral-100 transition-colors hover:bg-orangeHover"
-    >
+    <button onClick={onClickHandler} className="primary-btn w-full">
       + New Document
     </button>
   );

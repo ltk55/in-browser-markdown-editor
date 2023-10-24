@@ -6,11 +6,13 @@ import { TDocument } from "../type";
 import { getDate } from "./utils";
 
 interface DocumentStore {
+  currentDocumentId: string;
+  setCurrentDocumentId: (currentDocument: string) => void;
   documents: TDocument[];
   setDocuments: (documents: TDocument[]) => void;
   addDocument: (id: string) => void;
-  currentDocumentId: string;
-  setCurrentDocumentId: (currentDocument: string) => void;
+  deleteDocument: () => void;
+
   displayPreviewOnly: boolean;
   setDisplayPreviewOnly: (displayPreviewOnly: boolean) => void;
 }
@@ -18,6 +20,10 @@ interface DocumentStore {
 const useDocumentStore = create<DocumentStore>()(
   persist(
     (set) => ({
+      currentDocumentId: "2",
+      setCurrentDocumentId: (currentDocumentId: string) => {
+        set(() => ({ currentDocumentId }));
+      },
       documents: initialData,
       setDocuments: (documents: TDocument[]) => {
         return set(() => ({ documents }));
@@ -35,10 +41,20 @@ const useDocumentStore = create<DocumentStore>()(
           ],
         }));
       },
-      currentDocumentId: "2",
-      setCurrentDocumentId: (currentDocumentId: string) => {
-        set(() => ({ currentDocumentId }));
+      deleteDocument: () => {
+        set((state) => {
+          const currentDocumentId = state.currentDocumentId;
+          const filteredDocuments = state.documents.filter(
+            (doc) => doc.id !== currentDocumentId,
+          );
+          return {
+            documents: filteredDocuments,
+            currentDocumentId:
+              filteredDocuments.length > 0 ? filteredDocuments[0].id : "",
+          };
+        });
       },
+
       displayPreviewOnly: false,
       setDisplayPreviewOnly: (displayPreviewOnly: boolean) => {
         set(() => ({ displayPreviewOnly }));
