@@ -3,10 +3,12 @@ import { createJSONStorage, persist } from "zustand/middleware";
 
 import initialData from "../data/data.json";
 import { TDocument } from "../type";
+import { getDate } from "./utils";
 
 interface DocumentStore {
   documents: TDocument[];
   setDocuments: (documents: TDocument[]) => void;
+  addDocument: (id: string) => void;
   currentDocumentId: string;
   setCurrentDocumentId: (currentDocument: string) => void;
   displayPreviewOnly: boolean;
@@ -18,7 +20,20 @@ const useDocumentStore = create<DocumentStore>()(
     (set) => ({
       documents: initialData,
       setDocuments: (documents: TDocument[]) => {
-        set(() => ({ documents }));
+        return set(() => ({ documents }));
+      },
+      addDocument: (id: string) => {
+        set((state) => ({
+          documents: [
+            ...state.documents,
+            {
+              id,
+              createdAt: getDate(),
+              name: "untitled-document.md",
+              content: "",
+            },
+          ],
+        }));
       },
       currentDocumentId: "2",
       setCurrentDocumentId: (currentDocumentId: string) => {
