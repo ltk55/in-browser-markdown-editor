@@ -34,9 +34,9 @@ export default function MarkdownEditor(): JSX.Element {
     >
       <div
         role="heading"
-        className="my-auto flex h-10 items-center justify-between bg-neutral-200 px-4 pl-4"
+        className="my-auto flex h-10 items-center justify-between bg-neutral-200 px-4 pl-4 dark:bg-neutral-900"
       >
-        <span className="text-sm font-medium tracking-widest text-neutral-500">
+        <span className="text-sm font-medium tracking-widest text-neutral-500 dark:text-neutral-400">
           MARKDOWN
         </span>
 
@@ -49,7 +49,7 @@ export default function MarkdownEditor(): JSX.Element {
       </div>
 
       <textarea
-        className="mb-4 min-h-[calc(100vh-110px)] w-full resize-none border-none bg-neutral-100 p-4 pt-2 outline-none"
+        className="mb-4 min-h-[calc(100vh-110px)] w-full resize-none border-none bg-neutral-100 p-4 pt-2 outline-none dark:bg-neutral-1000 dark:text-neutral-400"
         value={currentDocument ? currentDocument.content : ""}
         onChange={handleContentChange}
       />

@@ -20,6 +20,7 @@ export default {
       orangeHover: "rgb(243, 151, 101)",
       transparent: "rgba(0, 0, 0, 0)",
       overlayTransparent: "rgb(21, 22, 25, 0.5)",
+      lightOverlayTransparent: "rgba(124, 129, 135, 0.5)",
     },
     fontFamily: {
       sans: ["Roboto", "sans-serif"],

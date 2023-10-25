@@ -1,6 +1,7 @@
 import Logo from "../../assets/logo.svg";
 import useDocumentStore from "../../lib/documentStore";
 import AddNewDocumentBtn from "./AddNewDocumentBtn";
+import DarkModeToggle from "./DarkModeToggle";
 import Document from "./Document";
 
 export default function Sidebar(): JSX.Element {
@@ -11,7 +12,7 @@ export default function Sidebar(): JSX.Element {
       <img src={Logo} alt="logo" className="pt-7 md:hidden" />
 
       <div className="my-7">
-        <div className="mb-7 text-sm font-medium uppercase tracking-widest text-neutral-600">
+        <div className="mb-7 text-sm font-medium uppercase tracking-widest text-neutral-500">
           my documents
         </div>
 
@@ -25,6 +26,8 @@ export default function Sidebar(): JSX.Element {
           })}
         </ul>
       </div>
+
+      <DarkModeToggle />
     </aside>
   );
 }

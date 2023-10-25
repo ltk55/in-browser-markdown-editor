@@ -10,6 +10,10 @@
     position: fixed;
   }
 
+  body.dark {
+    @apply bg-neutral-1000;
+  }
+
   .wrapper {
     grid-template-columns: 250px 100vw;
   }
@@ -39,6 +43,10 @@
 
   :is(h1, h3, h4, h5, h6) {
     @apply font-bold;
+  }
+
+  .dark :is(h1, h2, h3, h4, h5) {
+    @apply text-neutral-100;
   }
 
   h1 {
@@ -109,6 +117,10 @@
     @apply whitespace-pre-wrap;
   }
 
+  .dark .preview-markdown code {
+    @apply text-neutral-100;
+  }
+
   .preview-markdown blockquote {
     @apply bg-neutral-200;
     @apply p-6;
@@ -117,9 +129,17 @@
     @apply rounded-sm;
   }
 
+  .dark .preview-markdown blockquote {
+    @apply bg-neutral-800;
+  }
+
   .preview-markdown blockquote p {
     @apply text-neutral-700;
     @apply font-bold;
+  }
+
+  .dark .preview-markdown blockquote p {
+    @apply text-neutral-100;
   }
 
   .preview-markdown a {
@@ -130,6 +150,10 @@
   .preview-markdown pre {
     @apply bg-neutral-200;
     @apply p-6;
+  }
+
+  .dark .preview-markdown pre {
+    @apply bg-neutral-800;
   }
 
   .primary-btn {
