@@ -5,13 +5,9 @@ import DeleteDocumentModal from "./DeleteDocumentModal";
 export default function DeleteDocumentBtn(): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  function onClickHandler() {
-    setIsModalOpen(true);
-  }
-
   return (
     <>
-      <button onClick={onClickHandler} className="mr-6">
+      <button onClick={() => setIsModalOpen(true)} className="mr-6">
         <svg
           width="18"
           height="20"

@@ -1,3 +1,7 @@
+import "react-toastify/dist/ReactToastify.css";
+
+import { ToastContainer } from "react-toastify";
+
 import Header from "./components/header/Header";
 import MarkdownEditor from "./components/MarkdownEditor";
 import Preview from "./components/Preview";
@@ -23,6 +27,18 @@ function App() {
           <Preview />
         </main>
       </div>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

@@ -2,6 +2,8 @@ import React, { SetStateAction } from "react";
 
 import useDocumentStore from "../../lib/documentStore";
 
+import { toast } from "react-toastify";
+
 interface DeleteDocumentModalProps {
   isModalOpen: boolean;
   setIsModalOpen: React.Dispatch<SetStateAction<boolean>>;
@@ -15,6 +17,7 @@ export default function DeleteDocumentModal({
 
   function onClickHandler() {
     deleteDocument();
+    toast.success("Document deleted!");
     setIsModalOpen(false);
   }
 

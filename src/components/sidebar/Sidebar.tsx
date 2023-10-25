@@ -21,7 +21,12 @@ export default function Sidebar(): JSX.Element {
         <ul>
           {documents.map((doc) => {
             return (
-              <Document createdAt={doc.createdAt} name={doc.name} id={doc.id} />
+              <Document
+                createdAt={doc.createdAt}
+                name={doc.name}
+                id={doc.id}
+                key={doc.id}
+              />
             );
           })}
         </ul>
