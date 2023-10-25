@@ -172,3 +172,7 @@
     @apply bg-orangeHover;
   }
 }
+
+.toastBody {
+  font-family: "Roboto", sans-serif;
+}

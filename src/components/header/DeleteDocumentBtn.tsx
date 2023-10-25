@@ -1,13 +1,26 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
+import useDocumentStore from "../../lib/documentStore";
 import DeleteDocumentModal from "./DeleteDocumentModal";
 
 export default function DeleteDocumentBtn(): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const documents = useDocumentStore((state) => state.documents);
+
+  const isLastDocument = (documents.length = 1);
+
+  function onClickHandler() {
+    if (isLastDocument) {
+      toast.warn("You can't delete the last document!");
+    } else {
+      setIsModalOpen(true);
+    }
+  }
 
   return (
     <>
-      <button onClick={() => setIsModalOpen(true)} className="mr-6">
+      <button onClick={onClickHandler} className="mr-6">
         <svg
           width="18"
           height="20"

@@ -38,6 +38,7 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        bodyClassName="toastBody"
       />
     </div>
   );

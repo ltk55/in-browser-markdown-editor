@@ -1,8 +1,7 @@
 import React, { SetStateAction } from "react";
+import { toast } from "react-toastify";
 
 import useDocumentStore from "../../lib/documentStore";
-
-import { toast } from "react-toastify";
 
 interface DeleteDocumentModalProps {
   isModalOpen: boolean;
