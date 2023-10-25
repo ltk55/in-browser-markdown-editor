@@ -8,9 +8,9 @@ export default function DeleteDocumentBtn(): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const documents = useDocumentStore((state) => state.documents);
 
-  const isLastDocument = (documents.length = 1);
-
   function onClickHandler() {
+    const isLastDocument = (documents.length = 1);
+
     if (isLastDocument) {
       toast.warn("You can't delete the last document!");
     } else {
