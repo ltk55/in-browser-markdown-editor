@@ -1,6 +1,7 @@
 import Logo from "../../assets/logo.svg";
 import DeleteDocumentBtn from "./DeleteDocumentBtn";
 import DocumentName from "./DocumentName";
+import SaveDocumentBtn from "./SaveDocumentBtn";
 import SidebarToggle from "./SidebarToggle";
 
 export default function Header(): JSX.Element {
@@ -13,8 +14,9 @@ export default function Header(): JSX.Element {
         <DocumentName />
       </div>
 
-      <div className="ml-auto">
+      <div className="ml-auto mr-4 flex">
         <DeleteDocumentBtn />
+        <SaveDocumentBtn />
       </div>
     </header>
   );

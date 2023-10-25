@@ -12,7 +12,7 @@ interface DocumentStore {
   setDocuments: (documents: TDocument[]) => void;
   addDocument: (id: string) => void;
   deleteDocument: () => void;
-
+  saveDocument: () => void;
   displayPreviewOnly: boolean;
   setDisplayPreviewOnly: (displayPreviewOnly: boolean) => void;
 }
@@ -54,7 +54,35 @@ const useDocumentStore = create<DocumentStore>()(
           };
         });
       },
+      saveDocument: () => {
+        set((state) => {
+          const currentDocumentId = state.currentDocumentId;
+          const currentDocument = state.documents.find(
+            (doc) => doc.id === currentDocumentId,
+          );
 
+          if (currentDocument) {
+            const blob = new Blob([currentDocument.content], {
+              type: "text/plain",
+            });
+
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = currentDocument.name;
+            a.style.display = "none";
+
+            document.body.appendChild(a);
+            a.click();
+
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+          }
+
+          return { ...state };
+        });
+      },
       displayPreviewOnly: false,
       setDisplayPreviewOnly: (displayPreviewOnly: boolean) => {
         set(() => ({ displayPreviewOnly }));
