@@ -9,7 +9,7 @@ export default function DeleteDocumentBtn(): JSX.Element {
   const documents = useDocumentStore((state) => state.documents);
 
   function onClickHandler() {
-    const isLastDocument = (documents.length = 1);
+    const isLastDocument = documents.length === 1;
 
     if (isLastDocument) {
       toast.warn("You can't delete the last document!");
