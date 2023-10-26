@@ -80,6 +80,48 @@
     @apply opacity-100;
     @apply transition-opacity;
   }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-400;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-500;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-600;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-neutral-700;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-400;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-300;
+  }
 }
 
 @layer components {
