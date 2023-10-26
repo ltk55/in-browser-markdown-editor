@@ -8,7 +8,7 @@ export default function Sidebar(): JSX.Element {
   const documents = useDocumentStore((state) => state.documents);
 
   return (
-    <aside className="sidebar relative h-screen overflow-auto bg-neutral-900 px-6">
+    <aside className="sidebar relative h-screen overflow-hidden bg-neutral-900 pl-6">
       <img src={Logo} alt="logo" className="pt-7 md:hidden" />
 
       <div className="my-7">
@@ -16,9 +16,11 @@ export default function Sidebar(): JSX.Element {
           my documents
         </div>
 
-        <AddNewDocumentBtn />
+        <div className="mr-6">
+          <AddNewDocumentBtn />
+        </div>
 
-        <ul>
+        <ul className="mr-6 h-[calc(100vh-200px)] overflow-y-auto">
           {documents.map((doc) => {
             return (
               <Document
