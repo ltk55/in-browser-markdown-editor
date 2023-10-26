@@ -1,27 +1,43 @@
-# React + TypeScript + Vite
+# Table of contents
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Built with](#built-with)
+  - [Links](#links)
+  - [Screenshot](#screenshot)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### The challenge
 
-## Expanding the ESLint configuration
+Users should be able to:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Create, Read, Update, and Delete markdown documents ✅
+- Name and save documents to be accessed as needed ✅
+- Edit the markdown of a document and see the formatted preview of the content ✅
+- View a full-page preview of the formatted content ✅
+- View the optimal layout for the app depending on their device's screen size ✅
+- See hover states for all interactive elements on the page ✅
+- **Bonus**: If you're building a purely front-end project, use localStorage to save the current state in the browser that persists when the browser is refreshed ✅
 
-- Configure the top-level `parserOptions` property like this:
+### Built with
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Zustand](https://github.com/pmndrs/zustand)
+- [React-toastify](https://fkhadra.github.io/react-toastify/)
+- [React-markdown](https://github.com/remarkjs/react-markdown)
+-
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Links
+
+- Live Site URL: [https://in-browser-markdown-editor-gray.vercel.app/](https://in-browser-markdown-editor-gray.vercel.app/)
+- Solution URL: [https://www.frontendmentor.io/solutions/inbrowser-markdown-editor-react-typescript-tailwindcss-iRIyCS0DEf](https://www.frontendmentor.io/solutions/inbrowser-markdown-editor-react-typescript-tailwindcss-iRIyCS0DEf)
+
+### Screenshot
+
+![home-desktop](./screenshots/home.png)
+
+![sidebar-desktop](./screenshots/sidebar.png)
